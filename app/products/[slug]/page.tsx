@@ -1,12 +1,13 @@
 "use client"
 import { useEffect } from "react"
 import { pushDL } from "@/lib/track"
+
 interface Props { params: { slug: string } }
 export default function ProductPage({ params }: Props) {
   const { slug } = params
   useEffect(()=>{
     const name = slug.replaceAll("-", " ")
-    pushDL({event:"view_item", item_id: slug, item_name: name, page_path: location.pathname})
+    pushDL({event:"view_item", item_id: slug, item_name: name})
   },[slug])
   return (
     <section className="container mt-10">

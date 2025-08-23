@@ -7,7 +7,7 @@ export default function NewsletterForm() {
   const [submitted, setSubmitted] = useState(false)
 
   return (
-    <form className="card mt-8" onSubmit={(e)=>{e.preventDefault(); setSubmitted(true); pushDL({event:"nb_form_submit", form_id:"newsletter", page_path: location.pathname})}}>
+    <form className="card mt-8" onSubmit={(e)=>{e.preventDefault(); setSubmitted(true); pushDL({event:"nb_form_submit", form_id:"newsletter"})}}>
       <h3 className="font-semibold text-lg">Get early access and launch offers</h3>
       <div className="mt-3 flex gap-2">
         <input required type="email" value={email} onChange={e=>setEmail(e.target.value)}

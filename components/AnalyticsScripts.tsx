@@ -1,4 +1,3 @@
-/* Inserts GA4 via GTM and Microsoft Clarity when env vars are present */
 export function AnalyticsScripts() {
   const ga4 = process.env.NEXT_PUBLIC_GA4_ID
   const gtm = process.env.NEXT_PUBLIC_GTM_ID
