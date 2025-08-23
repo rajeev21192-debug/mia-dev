@@ -1,0 +1,15 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --bg: #FFF8EC;
+  --text: #171717;
+}
+html { scroll-behavior: smooth; }
+body { background: var(--bg); color: var(--text); }
+a { @apply underline underline-offset-4 decoration-primary-400; }
+.container { @apply max-w-6xl mx-auto px-4; }
+.btn { @apply inline-flex items-center rounded-2xl px-5 py-3 shadow-soft; }
+.btn-primary { @apply bg-primary text-black hover:opacity-90; }
+.card { @apply rounded-2xl bg-white shadow-soft p-6; }
