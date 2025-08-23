@@ -1,4 +1,8 @@
-export const metadata = { title: "Products • Nature Beez", description: "Gentle baby care products." }
+export const metadata = {
+  title: "All Baby Care Products — Nature Beez",
+  description: "Explore Nature Beez baby lotion, wash, shampoo, massage oil, tummy roll-on and more. Gentle, ayurvedic-inspired and dermatologically tested.",
+  alternates: { canonical: "/products" }
+}
 export default function ProductsPage() {
   return (
     <section className="container mt-10">
@@ -6,7 +10,7 @@ export default function ProductsPage() {
       <p className="opacity-70 mt-2">Store launching soon. Explore our line-up preview.</p>
       <div className="grid md:grid-cols-3 gap-6 mt-6">
         {[ "Baby Lotion", "Baby Wash", "Baby Shampoo", "Baby Massage Oil", "Tummy Roll-On", "Fabric Roll-On" ].map((n)=>(
-          <div key={n} className="card">{n}</div>
+          <div key={n} className="card" aria-label={`${n} placeholder`}>{n}</div>
         ))}
       </div>
     </section>
