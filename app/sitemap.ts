@@ -9,6 +9,6 @@ export default function sitemap(): MetadataRoute.Sitemap {
     { url: `${base}/faq`, priority: 0.6 },
     { url: `${base}/contact`, priority: 0.5 },
     { url: `${base}/legal/privacy`, priority: 0.2 },
-    { url: `${base}/legal/terms`, priority: 0.2 },
+    { url: `${base}/legal/terms`, priority: 0.2 }
   ]
 }

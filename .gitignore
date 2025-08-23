@@ -1,16 +1,5 @@
 node_modules/
-.bun/
 .next/
-out/
-npm-debug.log*
-yarn-debug.log*
-yarn-error.log*
-pnpm-debug.log*
-.env
-.env*.local
-.DS_Store
-Thumbs.db
-.vscode/
-.idea/
+.env*
 .vercel/
 *.zip
