@@ -1,0 +1,11 @@
+:root{
+  --nb-yellow:#F7D86A;
+  --nb-amber:#F2C63D;
+  --nb-red:#C01724;
+  --nb-cream:#FFF9EC;
+}
+.honey-title{ color: var(--nb-red); }
+.btn-amber{ background: var(--nb-amber); color:#222; border-radius:1rem; padding:0.5rem 1rem; font-weight:600; box-shadow:0 10px 20px rgba(0,0,0,0.06); }
+.nb-chip{ display:inline-flex; align-items:center; font-size:.75rem; padding:.25rem .5rem; border-radius:9999px; border:1px solid rgba(0,0,0,.1); background:#fff; }
+.nb-card{ background:#fff; border-radius:1rem; box-shadow:0 10px 20px rgba(0,0,0,0.06); padding:1rem; }
+.nb-hero{ background: linear-gradient(180deg, #FFF3CC 0%, #FFF9EC 100%); }
