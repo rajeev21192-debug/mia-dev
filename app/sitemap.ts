@@ -1,5 +1,2 @@
-import { MetadataRoute } from "next"
-export default function sitemap(): MetadataRoute.Sitemap {
-  const base = process.env.NEXT_PUBLIC_SITE_URL || "http://localhost:3000"
-  return [{ url: `${base}/` }, { url: `${base}/journal` }]
-}
+import { MetadataRoute } from 'next'
+export default function sitemap(): MetadataRoute.Sitemap{ const base=process.env.NEXT_PUBLIC_SITE_URL||'http://localhost:3000'; return [{url:`${base}/`},{url:`${base}/journal`},{url:`${base}/about`},{url:`${base}/products`},{url:`${base}/faq`},{url:`${base}/contact`}] }

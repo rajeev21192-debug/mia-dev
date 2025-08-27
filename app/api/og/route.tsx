@@ -1,0 +1,3 @@
+import { ImageResponse } from 'next/og'
+export const runtime='edge'
+export async function GET(req:Request){ const {searchParams}=new URL(req.url); const title=(searchParams.get('title')||'Nature Beez Journal').slice(0,100); return new ImageResponse((<div style={{height:'100%',width:'100%',display:'flex',background:'#F6DFB6',color:'#171717',padding:'60px',flexDirection:'column',justifyContent:'space-between',fontFamily:'Arial, Helvetica, sans-serif'}}><div style={{fontSize:36,fontWeight:700}}>Nature Beez</div><div style={{fontSize:64,fontWeight:800,lineHeight:1.2}}>{title}</div><div style={{fontSize:28}}>Minimal. Natural. Made for Baby Skin.</div></div>),{width:1200,height:630}) }

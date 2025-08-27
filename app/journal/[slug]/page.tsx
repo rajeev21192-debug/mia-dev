@@ -1,24 +1,8 @@
-import { notFound } from "next/navigation"
-import { allJournalPosts } from "contentlayer/generated"
-import { useMDXComponent } from "next-contentlayer/hooks"
-
-export async function generateStaticParams(){
-  return allJournalPosts.map(p => ({ slug: p.slug }))
-}
-export async function generateMetadata({ params }:{ params:{ slug:string } }){
-  const post = allJournalPosts.find(p => p.slug === params.slug)
-  if(!post) return {}
-  return { title: `${post.title} — Nature Beez`, description: post.description, alternates:{ canonical:`/journal/${post.slug}` } }
-}
-export default function JournalPostPage({ params }:{ params:{ slug:string } }){
-  const post = allJournalPosts.find(p => p.slug === params.slug)
-  if(!post) return notFound()
-  const MDX = useMDXComponent(post.body.code)
-  return (
-    <section className="container mt-10 prose">
-      <h1 className="text-3xl font-bold">{post.title}</h1>
-      <p className="opacity-70">{post.description}</p>
-      <div className="mt-8"><MDX /></div>
-    </section>
-  )
-}
+import { notFound } from 'next/navigation'
+import { allJournalPosts } from 'contentlayer/generated'
+import { useMDXComponent } from 'next-contentlayer2/hooks'
+import { site } from '@/lib/seo'
+import NewsletterInline from '@/components/NewsletterInline'
+export async function generateStaticParams(){ return allJournalPosts.map(p=>({slug:p.slug})) }
+export async function generateMetadata({ params }:{ params:{ slug:string } }){ const post=allJournalPosts.find(p=>p.slug===params.slug); if(!post) return {}; const og=`${site.url}/api/og?title=${encodeURIComponent(post.title)}`; return { title:`${post.title} — Nature Beez`, description:post.description, alternates:{ canonical:`/journal/${post.slug}` }, openGraph:{ images:[og] }, twitter:{ card:'summary_large_image', images:[og] } } }
+export default function JournalPostPage({ params }:{ params:{ slug:string } }){ const post=allJournalPosts.find(p=>p.slug===params.slug); if(!post) return notFound(); const MDX=useMDXComponent(post.body.code); const related=allJournalPosts.filter(p=>p.slug!==post.slug).sort((a,b)=>(b.date||'').localeCompare(a.date||'')).slice(0,3); return(<section className='container mt-10 prose'><h1 className='text-3xl font-bold'>{post.title}</h1><p className='opacity-70'>{post.description}</p><div className='text-sm opacity-60'>{post.date||''} • {post.readingTime||`${post.minutes} min read`}</div><div className='mt-8'><MDX/></div><NewsletterInline/>{related.length>0&&(<div className='mt-12'><h3 className='text-xl font-semibold'>Related posts</h3><ul className='mt-3 list-disc pl-6'>{related.map(r=>(<li key={r._id}><a href={r.url}>{r.title}</a></li>))}</ul></div>)}</section>) }

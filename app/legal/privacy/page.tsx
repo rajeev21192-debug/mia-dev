@@ -1,13 +1,1 @@
-import JsonLd from "@/components/JsonLd"
-import { site } from "@/lib/seo"
-export const metadata={ title:"Privacy Policy — Nature Beez", description:"Nature Beez privacy policy aligned with DPDP India and GDPR standards.", alternates:{ canonical:"/legal/privacy" } }
-export default function Page(){
-  const crumbs={ "@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[
-    { "@type":"ListItem","position":1,"name":"Home","item": site.url },
-    { "@type":"ListItem","position":2,"name":"Privacy Policy","item": site.url + "/legal/privacy" }
-  ]}
-  return(<>
-    <JsonLd json={crumbs}/>
-    <section className='container mt-10'><h1 className='text-3xl font-bold'>Privacy Policy</h1><p className='mt-2 opacity-70'>Placeholder for DPDP‑India & GDPR aligned policy.</p></section>
-  </>)
-}
+export const metadata={ title:'Privacy Policy — Nature Beez', description:'How Nature Beez collects, uses and protects your information.' }; export default function Page(){ return (<section className='container mt-10 prose'><h1 className='text-3xl font-bold'>Privacy Policy</h1><p><strong>Last updated:</strong> 27 Aug 2025</p><h2>What we collect</h2><ul><li>Analytics data (pages viewed, device info) via GA4/Clarity</li><li>Contact info you provide (email for newsletter)</li></ul><h2>How we use it</h2><ul><li>To improve our website and content</li><li>To send updates you opt into</li></ul><h2>Data sharing</h2><p>We don’t sell personal data. We use trusted processors (Vercel, Google, Microsoft) bound by their privacy terms.</p><h2>Your choices</h2><p>You can unsubscribe anytime. To request deletion, email hello@naturebeez.com.</p></section>) }

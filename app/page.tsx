@@ -1,3 +1,3 @@
-import Hero from "@/components/Hero"
-export const metadata={ title:"Gentle Ayurvedic Baby Care — Nature Beez", description:"Premium, minimal and natural baby care made for delicate skin." }
-export default function Home(){ return (<><Hero/></>) }
+import Image from 'next/image'
+export const metadata={title:'Gentle Ayurvedic Baby Care — Nature Beez',description:'Premium, minimal and natural baby care made for delicate skin.'}
+export default function Home(){ return(<section className='container mt-10 grid md:grid-cols-2 gap-8 items-center'><div><h1 className='text-4xl md:text-5xl font-bold leading-tight'>Minimal. Natural. Made for Baby Skin.</h1><p className='mt-4 text-lg'>Gentle, ayurvedic-inspired care that’s dermatologically tested and safe for newborns.</p><div className='mt-6 flex gap-3'><a href='/products' className='btn btn-primary'>Shop Coming Soon</a><a href='/journal' className='btn bg-white'>Read the Journal</a></div></div><div className='rounded-2xl shadow-soft overflow-hidden'><Image src='/images/hero-nature-beez.png' alt='Nature Beez hero' width={800} height={450} priority/></div></section>) }
