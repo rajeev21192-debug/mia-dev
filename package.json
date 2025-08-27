@@ -1,5 +1,8 @@
 {
   "scripts": {
-    "postinstall": "npx -y @contentlayer2/cli build --config contentlayer.config.mjs"
+    "vercel-build": "contentlayer2 build --config contentlayer.config.mjs && next build"
+  },
+  "devDependencies": {
+    "@contentlayer2/cli": "^0.5.8"
   }
 }
