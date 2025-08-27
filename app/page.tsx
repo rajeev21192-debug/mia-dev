@@ -6,19 +6,7 @@ export const metadata={ title:'Nature Beez — Minimal. Natural. Made for Baby S
 export default function HomeV10(){
   return (
     <>
-      <header className="p-4 flex items-center justify-between border-b">
-        <Link href="/">
-          <Image src="/logo.png" alt="Nature Beez" width={160} height={50} priority/>
-        </Link>
-        <nav className="flex gap-4 text-sm">
-          <Link href="/products">Products</Link>
-          <Link href="/ingredients">Ingredients & Science</Link>
-          <Link href="/journal">Journal</Link>
-          <Link href="/faq">FAQ</Link>
-          <Link href="/about">About</Link>
-          <Link href="/contact">Contact</Link>
-        </nav>
-      </header>
+      {/* HERO */}
       <section className="nb-hero">
         <div className="container py-10 grid md:grid-cols-2 gap-8 items-center">
           <div>
@@ -34,6 +22,8 @@ export default function HomeV10(){
           </div>
         </div>
       </section>
+
+      {/* FEATURES */}
       <section className="container py-10 grid md:grid-cols-3 gap-6">
         {[
           {t:'pH 5.5 Balanced', s:'supports skin barrier', img:'/images/icon-ph.png'},
@@ -47,6 +37,8 @@ export default function HomeV10(){
           </div>
         ))}
       </section>
+
+      {/* STORY */}
       <section className="container py-14 grid md:grid-cols-2 gap-8 items-center">
         <div>
           <h2 className="text-3xl font-bold" style={{color:'var(--nb-red)'}}>By nature. For nature. For all.</h2>
@@ -57,6 +49,8 @@ export default function HomeV10(){
           <Image src="/images/hero-wash.png" alt="Brand" width={900} height={600}/>
         </div>
       </section>
+
+      {/* JOURNAL PREVIEW */}
       <section className="container pb-16">
         <h3 className="text-2xl font-bold mb-4">From the Journal</h3>
         <div className="grid md:grid-cols-3 gap-6">
