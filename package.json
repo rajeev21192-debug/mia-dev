@@ -1,5 +1,5 @@
 {
   "scripts": {
-    "postinstall": "contentlayer2 build --config contentlayer.config.mjs"
+    "postinstall": "npx -y @contentlayer2/cli build --config contentlayer.config.mjs"
   }
 }
