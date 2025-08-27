@@ -6,11 +6,23 @@ export const metadata={ title:'Nature Beez — Minimal. Natural. Made for Baby S
 export default function HomeV10(){
   return (
     <>
+      <header className="p-4 flex items-center justify-between border-b">
+        <Link href="/">
+          <Image src="/logo.png" alt="Nature Beez" width={160} height={50} priority/>
+        </Link>
+        <nav className="flex gap-4 text-sm">
+          <Link href="/products">Products</Link>
+          <Link href="/ingredients">Ingredients & Science</Link>
+          <Link href="/journal">Journal</Link>
+          <Link href="/faq">FAQ</Link>
+          <Link href="/about">About</Link>
+          <Link href="/contact">Contact</Link>
+        </nav>
+      </header>
       <section className="nb-hero">
         <div className="container py-10 grid md:grid-cols-2 gap-8 items-center">
           <div>
-            <div className="inline-flex items-center text-white bg-[var(--nb-red)] text-xs px-2 py-1 rounded-full">NEW</div>
-            <h1 className="text-4xl md:text-5xl font-extrabold mt-3 honey-title">Boosted Body Care for Delicate Baby Skin</h1>
+            <h1 className="text-4xl md:text-5xl font-extrabold mt-3 honey-title">Minimal. Natural. Made for Baby Skin.</h1>
             <p className="mt-3 text-lg opacity-90">Lightweight, pH 5.5, and fragrance-light formulas designed for newborn comfort.</p>
             <div className="mt-6 flex gap-3">
               <Link href="/products" className="btn-amber">Shop All</Link>
@@ -24,26 +36,15 @@ export default function HomeV10(){
       </section>
       <section className="container py-10 grid md:grid-cols-3 gap-6">
         {[
-          {t:'pH 5.5 Balanced', s:'supports skin barrier'},
-          {t:'Dermatologist Reviewed', s:'formulated with care'},
-          {t:'Minimal Ingredients', s:'clean & gentle'}
+          {t:'pH 5.5 Balanced', s:'supports skin barrier', img:'/images/icon-ph.png'},
+          {t:'Dermatologist Reviewed', s:'formulated with care', img:'/images/icon-dermat.png'},
+          {t:'Minimal Ingredients', s:'clean & gentle', img:'/images/icon-ingredients.png'}
         ].map(x=> (
-          <div key={x.t} className="nb-card">
-            <div className="text-2xl font-bold" style={{color:'var(--nb-red)'}}>{x.t}</div>
+          <div key={x.t} className="nb-card flex flex-col items-center text-center">
+            <Image src={x.img} alt={x.t} width={80} height={80}/>
+            <div className="text-2xl font-bold mt-3" style={{color:'var(--nb-red)'}}>{x.t}</div>
             <div className="opacity-70 mt-1">{x.s}</div>
           </div>
-        ))}
-      </section>
-      <section className="container grid md:grid-cols-3 gap-6">
-        {[
-          {img:'/images/hero-lotion.png', t:'Skin Care', href:'/products?cat=skin'},
-          {img:'/images/hero-shampoo.png', t:'Hair Care', href:'/products?cat=hair'},
-          {img:'/images/hero-wash.png', t:'Bath Time', href:'/products?cat=bath'},
-        ].map(x=> (
-          <Link key={x.t} href={x.href} className="relative rounded-2xl overflow-hidden" style={{boxShadow:'0 10px 20px rgba(0,0,0,0.06)'}}>
-            <Image src={x.img} alt={x.t} width={900} height={600}/>
-            <div className="absolute bottom-3 left-3 nb-chip bg-white/90">{x.t}</div>
-          </Link>
         ))}
       </section>
       <section className="container py-14 grid md:grid-cols-2 gap-8 items-center">
