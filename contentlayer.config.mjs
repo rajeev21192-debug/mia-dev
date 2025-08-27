@@ -1,8 +1,7 @@
-// CommonJS Contentlayer config so the CLI can find it reliably on Vercel
-const { defineDocumentType, makeSource } = require("contentlayer2/source-files")
-const remarkGfm = require("remark-gfm")
+import { defineDocumentType, makeSource } from "contentlayer2/source-files"
+import remarkGfm from "remark-gfm"
 
-const JournalPost = defineDocumentType(() => ({
+export const JournalPost = defineDocumentType(() => ({
   name: "JournalPost",
   filePathPattern: `journal/**/*.mdx`,
   contentType: "mdx",
@@ -28,7 +27,7 @@ const JournalPost = defineDocumentType(() => ({
   }
 }))
 
-module.exports = makeSource({
+export default makeSource({
   contentDirPath: "content",
   documentTypes: [JournalPost],
   mdx: { remarkPlugins: [remarkGfm] },
