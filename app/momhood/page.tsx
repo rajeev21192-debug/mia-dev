@@ -1,0 +1,1 @@
+export default function Page() { return (<div><h1>Momhood Page (Placeholder)</h1></div>); }
